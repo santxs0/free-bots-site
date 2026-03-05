@@ -14,6 +14,7 @@ body {
   animation: gradientMove 12s ease infinite;
   color: white;
   text-align: center;
+  overflow-x: hidden;
 }
 
 @keyframes gradientMove {
@@ -22,10 +23,11 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* HEADER só para o menu */
+/* HEADER */
 header {
   height: 80px;
   position: relative;
+  z-index: 2000;
 }
 
 /* MENU */
@@ -34,7 +36,17 @@ header {
   top: 20px;
   left: 20px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 3000;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeMenu 0.8s ease forwards;
+}
+
+@keyframes fadeMenu {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .menu-btn div {
@@ -56,7 +68,9 @@ header {
   overflow: hidden;
   transform: scaleY(0);
   transform-origin: top;
-  transition: 0.25s ease;
+  transition: 0.3s ease;
+  z-index: 4000; /* AGORA FICA NA FRENTE DE TUDO */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
 .dropdown a {
@@ -75,7 +89,7 @@ header {
   transform: scaleY(1);
 }
 
-/* TÍTULO ANIMADO */
+/* TÍTULO */
 h1 {
   margin-top: 10px;
   font-size: 2.8rem;
@@ -186,7 +200,8 @@ p {
 
 footer {
   margin: 60px 0 30px;
-  opacity: 0.5;
+  opacity: 0;
+  animation: fadeMenu 1.5s ease forwards;
 }
 </style>
 </head>
