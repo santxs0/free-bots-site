@@ -14,7 +14,6 @@ body {
   animation: gradientMove 12s ease infinite;
   color: white;
   text-align: center;
-  position: relative;
 }
 
 @keyframes gradientMove {
@@ -23,7 +22,13 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* MENU NO CANTO SUPERIOR ESQUERDO */
+/* HEADER só para o menu */
+header {
+  height: 80px;
+  position: relative;
+}
+
+/* MENU */
 .menu-btn {
   position: absolute;
   top: 20px;
@@ -52,7 +57,6 @@ body {
   transform: scaleY(0);
   transform-origin: top;
   transition: 0.25s ease;
-  z-index: 1000;
 }
 
 .dropdown a {
@@ -73,7 +77,7 @@ body {
 
 /* TÍTULO ANIMADO */
 h1 {
-  margin-top: 110px;
+  margin-top: 10px;
   font-size: 2.8rem;
   font-weight: 700;
   opacity: 0;
@@ -141,15 +145,10 @@ p {
   box-shadow: 0 15px 50px rgba(0,0,0,0.7);
 }
 
-.card h2 {
-  margin-bottom: 15px;
-}
-
 .features {
   list-style: none;
   padding: 0;
   text-align: left;
-  font-size: 0.95rem;
   line-height: 1.7;
 }
 
@@ -163,7 +162,6 @@ p {
   font-weight: bold;
 }
 
-/* BOTÃO */
 .btn {
   margin-top: 20px;
   padding: 13px 25px;
@@ -171,7 +169,6 @@ p {
   border-radius: 10px;
   background: linear-gradient(45deg,#5865F2,#7b86ff);
   color: white;
-  font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -181,7 +178,6 @@ p {
   box-shadow: 0 0 20px #5865F2;
 }
 
-/* TERMOS */
 #termos {
   display: none;
   justify-content: center;
@@ -191,24 +187,24 @@ p {
 footer {
   margin: 60px 0 30px;
   opacity: 0.5;
-  font-size: 0.9rem;
 }
 </style>
 </head>
 <body>
 
-<!-- MENU -->
-<div class="menu-btn" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+<header>
+  <div class="menu-btn" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-<div class="dropdown" id="menu">
-  <a href="#" onclick="showHome()">Início</a>
-  <a href="#" onclick="showTerms()">Termos</a>
-  <a href="https://discord.gg/p7nfy2DDJv" target="_blank">Suporte</a>
-</div>
+  <div class="dropdown" id="menu">
+    <a href="#" onclick="showHome()">Início</a>
+    <a href="#" onclick="showTerms()">Termos</a>
+    <a href="https://discord.gg/p7nfy2DDJv" target="_blank">Suporte</a>
+  </div>
+</header>
 
 <h1>🚀 Painel de Bots Gratuitos</h1>
 <p>Escolha um bot abaixo e convide para seu servidor</p>
@@ -249,18 +245,6 @@ footer {
     </button>
   </div>
 
-</div>
-
-<div id="termos">
-  <div class="card">
-    <h2>📜 Termos de Uso</h2>
-    <ul class="features">
-      <li>Uso conforme as regras do Discord</li>
-      <li>Proibido uso ilegal</li>
-      <li>Acesso pode ser revogado a qualquer momento</li>
-      <li>Ao usar, você concorda com os termos</li>
-    </ul>
-  </div>
 </div>
 
 <footer>
