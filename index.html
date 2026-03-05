@@ -24,28 +24,19 @@ overflow-x:hidden;
 100%{background-position:0% 50%;}
 }
 
+/* HEADER */
+
 header{
 height:80px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:0 25px;
-position:relative;
-z-index:9999;
 }
 
 .logo{
 font-size:1.4rem;
 font-weight:700;
-}
-
-/* linha divisória */
-
-.divider{
-width:80%;
-height:1px;
-background:rgba(255,255,255,0.1);
-margin:10px auto 25px auto;
 }
 
 /* MENU */
@@ -93,6 +84,15 @@ background:#5865F2;
 transform:scaleY(1);
 }
 
+/* DIVISÓRIA */
+
+.divider{
+width:70%;
+height:1px;
+background:rgba(255,255,255,0.15);
+margin:10px auto 20px auto;
+}
+
 /* TITULO */
 
 h1{
@@ -122,16 +122,16 @@ to{opacity:.7;transform:translateY(0);}
 /* VANTAGENS */
 
 .vantagens{
-display:flex;
+display:grid;
+grid-template-columns:repeat(2,180px);
 justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+gap:15px;
 margin-bottom:40px;
 }
 
 .vantagem{
 background:rgba(32,32,64,.7);
-padding:12px 20px;
+padding:12px;
 border-radius:12px;
 font-size:.9rem;
 opacity:0;
@@ -152,9 +152,9 @@ to{opacity:1;transform:translateY(0);}
 
 .container{
 display:grid;
-grid-template-columns:repeat(2,280px);
+grid-template-columns:repeat(2,260px);
 justify-content:center;
-gap:40px;
+gap:30px;
 padding:20px;
 }
 
@@ -164,21 +164,20 @@ padding:20px;
 background:rgba(32,32,64,0.8);
 backdrop-filter:blur(15px);
 border-radius:20px;
-padding:30px;
-width:280px;
+padding:22px;
+width:260px;
 box-shadow:0 10px 40px rgba(0,0,0,0.5);
 transition:.3s;
 border:2px solid transparent;
-
 animation:fadeUp .8s forwards;
 opacity:0;
 transform:translateY(40px);
 }
 
 .card:hover{
+transform:translateY(-10px);
 border-color:#5865F2;
-box-shadow:0 0 20px rgba(88,101,242,.6);
-transform:translateY(-10px) scale(1.02);
+box-shadow:0 0 15px #5865F2;
 }
 
 @keyframes fadeUp{
@@ -189,12 +188,12 @@ to{opacity:1;transform:translateY(0);}
 list-style:none;
 padding:0;
 text-align:left;
-line-height:1.5;
+line-height:1.6;
 font-size:.95rem;
 }
 
 .features li{
-margin-bottom:5px;
+margin-bottom:6px;
 }
 
 .features li::before{
@@ -204,20 +203,19 @@ font-weight:bold;
 }
 
 .btn{
-margin-top:18px;
-padding:12px 22px;
+margin-top:15px;
+padding:10px 20px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 background:linear-gradient(45deg,#5865F2,#7b86ff);
 color:white;
-font-size:.95rem;
+font-size:.9rem;
 cursor:pointer;
 transition:.3s;
 }
 
 .btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 20px #5865F2;
 }
 
 /* TERMOS */
@@ -228,10 +226,7 @@ justify-content:center;
 padding:40px;
 }
 
-footer{
-margin:60px 0 30px;
-opacity:.7;
-}
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -243,6 +238,15 @@ grid-template-columns:1fr;
 width:90%;
 }
 
+.vantagens{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+footer{
+margin:60px 0 30px;
+opacity:.7;
 }
 
 </style>
@@ -268,15 +272,15 @@ width:90%;
 
 </header>
 
-<h1>🚀 Painel de Bots Gratuitos</h1>
 <div class="divider"></div>
 
+<h1>🚀 Painel de Bots Gratuitos</h1>
 <p>Escolha um bot abaixo e convide para seu servidor</p>
 
 <div class="vantagens">
 <div class="vantagem">⚡ 24h online</div>
-<div class="vantagem">🔒 Seguro</div>
-<div class="vantagem">⚙️ Fácil config</div>
+<div class="vantagem">🔒 Segurança</div>
+<div class="vantagem">⚙️ Fácil configuração</div>
 <div class="vantagem">💬 Suporte</div>
 </div>
 
@@ -288,12 +292,11 @@ width:90%;
 
 <ul class="features">
 <li>Bot de vendas</li>
-<li>Carrinho automático</li>
+<li>Carrinhos</li>
 <li>Logs e cupons</li>
-<li>Feedback de clientes</li>
-<li>Ranking de compradores</li>
+<li>Feedback</li>
+<li>Ranking de clientes</li>
 <li>Pagamento manual</li>
-<li>Divulgação na bio</li>
 </ul>
 
 <button class="btn"
@@ -308,13 +311,12 @@ Convidar Bot
 <h2>🎫 E-Pro Bot</h2>
 
 <ul class="features">
-<li>Sistema de tickets</li>
+<li>Bot de tickets</li>
 <li>Painel com botões</li>
-<li>Menus de atendimento</li>
-<li>Logs de suporte</li>
-<li>Feedback de usuários</li>
+<li>Menu de opções</li>
 <li>Configuração simples</li>
-<li>Divulgação na bio</li>
+<li>Logs</li>
+<li>Feedback</li>
 </ul>
 
 <button class="btn"
@@ -333,11 +335,11 @@ Convidar Bot
 <h2>📜 Termos de Uso</h2>
 
 <ul class="features">
-<li>Não utilize os bots para esquemas maliciosos</li>
+<li>Não utilize para esquemas maliciosos</li>
 <li>Proibido uso ilegal</li>
 <li>Acesso pode ser revogado</li>
 <li>Algumas informações podem ser armazenadas</li>
-<li>Ao usar você concorda com os termos</li>
+<li>Uso implica concordância</li>
 </ul>
 
 </div>
