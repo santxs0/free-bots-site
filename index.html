@@ -123,7 +123,7 @@ to{opacity:.7;transform:translateY(0);}
 
 .vantagens{
     display: grid;
-    grid-template-columns: repeat(2, 100px); /* largura menor */
+    grid-template-columns: repeat(2, 100px);
     justify-content: center;
     gap: 12px;
     margin-bottom: 35px;
@@ -131,9 +131,9 @@ to{opacity:.7;transform:translateY(0);}
 
 .vantagem{
     background: rgba(32,32,64,.7);
-    padding: 16px 6px; /* altura maior, largura confortável */
+    padding: 16px 6px;
     border-radius: 10px;
-    font-size: 1rem; /* fonte maior */
+    font-size: 1rem;
     opacity: 0;
     transform: translateY(20px);
     animation: vantAnim .8s forwards;
@@ -234,7 +234,7 @@ font-weight:bold;
 
 .btn:active{
     box-shadow:0 0 20px #7b86ff;
-    transform:scale(0.97); /* efeito de “pressionado” */
+    transform:scale(0.97);
 }
   
 /* TERMOS */
@@ -275,7 +275,7 @@ opacity:.7;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1; /* fica atrás do conteúdo */
+  z-index: -1;
 }
 
 </style>
@@ -420,13 +420,13 @@ toggleMenu();
 <script>
 particlesJS('particles-js', {
   particles: {
-    number: { value: 80, density: { enable: true, value_area: 800 } },
-    color: { value: "#ffffff" },
+    number: { value: 90, density: { enable: true, value_area: 900 } },
+    color: { value: ["#ffffff","#7b86ff","#5865F2"] },
     shape: { type: "circle" },
-    opacity: { value: 0.5, random: true, anim: { enable: false } },
-    size: { value: 3, random: true, anim: { enable: false } },
-    line_linked: { enable: true, distance: 120, color: "#ffffff", opacity: 0.2, width: 1 },
-    move: { enable: true, speed: 1.5, direction: "none", random: true, straight: false, out_mode: "out" }
+    opacity: { value: 0.6, random: true, anim: { enable: true, speed: 1, opacity_min:0.1, sync: false } },
+    size: { value: 4, random: true, anim: { enable: true, speed: 3, size_min:1, sync:false } },
+    line_linked: { enable: true, distance: 150, color: "#7b86ff", opacity: 0.2, width: 1 },
+    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out", bounce:false }
   },
   interactivity: {
     detect_on: "canvas",
@@ -436,7 +436,7 @@ particlesJS('particles-js', {
       resize: true
     },
     modes: {
-      grab: { distance: 140, line_linked: { opacity: 0.4 } },
+      grab: { distance: 160, line_linked: { opacity: 0.4 } },
       push: { particles_nb: 4 }
     }
   },
